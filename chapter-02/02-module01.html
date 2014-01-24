@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.min.js"></script>
+  <script type="text/javascript" src="02-module01.js"></script>
+  <title>Chapter 02- Module 01</title>
+</head>
+<body ng-app="module01">
+<div ng-controller="CartController">
+  <h1>Shop!</h1>
+    <table>
+      <tr ng-repeat="item in items">
+        <td>{{item.title}}</td>
+        <td>{{item.description}}</td>
+        <td>{{item.price | currency}}</td>
+      <tr>
+  </table>
+</div>
+</body>
+</html>
