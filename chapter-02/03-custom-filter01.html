@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.min.js"></script>
+  <script type="text/javascript" src="03-custom-filter01.js"></script>
+  <title>Chapter 02- Custom Filter</title>
+</head>
+<body ng-app="customFilterApp">
+<div ng-controller="titleController">
+  <h1>{{pageHeading | titleCase}}</h1>
+  <input ng-model='pageHeading' />
+</div>
+</body>
+</html>
