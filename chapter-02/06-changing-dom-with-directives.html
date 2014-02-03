@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app="ChangingDom">
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.js"></script>
+  <script type="text/javascript" src="06-changingDOMWithDirectives.js"></script>
+  <title>Changing the DOM using directives</title>
+</head>
+<body ng-controller="MainController">
+  <button ng-click="clickUnfocused()">
+    Not focused
+  </button>
+  <button ngbk-Focus ng-click="clickFocused()">
+    I'm very focused!
+  </button>
+  <div>{{message.text}}</div>
+</body>
+</html>
