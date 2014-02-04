@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="ValidatingUserInput">
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.js"></script>
+  <script type="text/javascript" src="07-validatingUserInput.js"></script>
+  <title>Validating User Input </title>
+</head>
+<body>
+  <h1>Sign up!</h1>
+  <form name="addUserForm" ng-controller="AddUserController">
+    <div ng-show="message">{{message}}</div>
+    <div>
+      First name: <input name="firstName" ng-model="user.firstName" required/>
+    </div>
+    <div>
+      Last name: <input name="lastName" ng-model="user.lastName" required/>
+    </div>
+    <div>
+      Email: <input type="email" ng-model="user.email" required/>
+    </div>
+    <div>
+      Age: <input type="numer" ng-model="user.age" ng-maxlength= '3' ng-min = '1'/>
+    </div>
+    <div>
+      <button ng-click="addUser()" ng-disabled="!addUserForm.$valid">
+        Submit
+      </button>
+    </div>
+  </form>
+</body>
+</html>
