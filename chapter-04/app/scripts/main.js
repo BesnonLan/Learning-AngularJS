@@ -1,3 +1,3 @@
 'use strict';
 
-var GethubApp = angular.module('GethubApp', ['ngRoute']);
+var GethubApp = angular.module('GethubApp', ['ngRoute', 'ngResource']);
