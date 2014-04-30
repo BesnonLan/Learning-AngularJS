@@ -1,5 +1,8 @@
-'use strict';
+define(['angular', 'services'], function (angular) {
+  'use strict';
 
-GethubApp.controller('ListCtrl', ['$scope', 'recipes', function($scope, recipes) {
-  $scope.recipes = recipes;
-}]);
+  return angular.module('GethubApp.controllers', ['GethubApp.services'])
+    .controller('ListCtrl', ['$scope', 'recipes', function($scope, recipes) {
+      $scope.recipes = recipes;
+    }]);
+});

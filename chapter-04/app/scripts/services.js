@@ -1,22 +1,27 @@
-'use strict';
+define(['angular', 'services', 'angularResource'], function (angular) {
+  'use strict';
 
-GethubApp.factory('Recipe', ['$resource',
-  function($resource) {
-    return $resource('/recipes/:id', {id: '@id'});
-}]);
+  var services = angular.module('GethubApp.services', ['ngResource']);
 
+  services.factory('Recipe', ['$resource',
+    function($resource) {
+      return $resource('/recipes/:id', {id: '@id'});
+  }]);
 
-GethubApp.factory('MultiRecipeLoader', ['Recipe', '$q',
-  function(Recipe, $q) {
-    return function() {
-      var delay = $q.defer();
+  services.factory('MultiRecipeLoader', ['Recipe', '$q',
+    function(Recipe, $q) {
+      return function() {
+        var delay = $q.defer();
 
-      Recipe.query(function (recipes) {
-        delay.resolve(recipes);
-      }, function () {
-        delay.reject('unable to fetch recipes.');
-      });
+        Recipe.query(function (recipes) {
+          delay.resolve(recipes);
+        }, function () {
+          delay.reject('unable to fetch recipes.');
+        });
 
-      return delay.promise;
-    };
-}]);
+        return delay.promise;
+      };
+  }]);
+
+  return services;
+});
