@@ -158,11 +158,16 @@
   /**
    * ## Execution
    *
-   * No onload, only on demand now
+   * No onload, only on demand now.
+   *
+   * It use the suggested by http://blogs.lessthandot.com/index.php/webdev/uidevelopment/javascript/unit-testing-with-jasmine-2-0-and-require-js/
+   * Also it was updated to use require for load the specs from suite module to leave this file cleaner.
    */
   window.executeTest = function() {
-    htmlReporter.initialize();
-    env.execute();
+    require(['require', 'tests/suite'], function() {
+      htmlReporter.initialize();
+      env.execute();
+    });
   };
 
   /**
