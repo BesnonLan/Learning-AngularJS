@@ -1,22 +1,28 @@
-function Player() {
-}
-Player.prototype.play = function(song) {
-  this.currentlyPlayingSong = song;
-  this.isPlaying = true;
-};
+define(['src/Song'], function(song) {
 
-Player.prototype.pause = function() {
-  this.isPlaying = false;
-};
-
-Player.prototype.resume = function() {
-  if (this.isPlaying) {
-    throw new Error("song is already playing");
+  console.log('loading...');
+  var player = function Player() {
   }
+  player.prototype.play = function(song) {
+    this.currentlyPlayingSong = song;
+    this.isPlaying = true;
+  };
 
-  this.isPlaying = true;
-};
+  player.prototype.pause = function() {
+    this.isPlaying = false;
+  };
 
-Player.prototype.makeFavorite = function() {
-  this.currentlyPlayingSong.persistFavoriteStatus(true);
-};
+  player.prototype.resume = function() {
+    if (this.isPlaying) {
+      throw new Error("song is already playing");
+    }
+
+    this.isPlaying = true;
+  };
+
+  player.prototype.makeFavorite = function() {
+    this.currentlyPlayingSong.persistFavoriteStatus(true);
+  };
+
+  return player;
+})
