@@ -1,4 +1,4 @@
-define(['angular', 'services', 'angularResource'], function (angular) {
+define(['angular', 'angularResource'], function (angular) {
   'use strict';
 
   var services = angular.module('GethubApp.services', ['ngResource']);

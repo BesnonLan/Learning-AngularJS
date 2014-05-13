@@ -33,6 +33,6 @@ require.config({
   }
 });
 
-require(["jasmineBoot", "angularMocks", 'app'], function(angular) {
+require(["jasmineBoot", "angularMocks"], function(angular) {
   window.executeTest();
 });
