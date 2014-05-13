@@ -1,7 +1,7 @@
 define(
   [
-    'tests/spec/controllersSpec'
+    '../tests/spec/controllersSpec'
     //Other specs...
   ], function() {
 
-});
+  });

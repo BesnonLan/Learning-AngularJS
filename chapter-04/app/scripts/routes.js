@@ -4,7 +4,7 @@ define(['angular', 'app'], function(angular, app) {
   app.config(['$routeProvider', function($routeProvider) {
     $routeProvider
       .when('/', {
-        controller: 'ListCtrl',
+        controller: 'ListController',
         resolve: {
           recipes: ["MultiRecipeLoader", function (MultiRecipeLoader) {
             return MultiRecipeLoader();

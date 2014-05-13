@@ -164,7 +164,7 @@
    * Also it was updated to use require for load the specs from suite module to leave this file cleaner.
    */
   window.executeTest = function() {
-    require(['require', 'tests/suite'], function() {
+    require(['require', '../tests/suite'], function() {
       htmlReporter.initialize();
       env.execute();
     });
