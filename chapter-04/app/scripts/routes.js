@@ -12,5 +12,14 @@ define(['angular', 'app'], function(angular, app) {
         },
         templateUrl: '/views/list.html'
       })
+      .when('/view/:recipeId', {
+        controller: 'ViewController',
+        resolve: {
+          recipe: ["RecipeLoader", function(RecipeLoader) {
+            return RecipeLoader();
+          }]
+        },
+        templateUrl: '/views/viewRecipe.html'
+      })
   }]);
 });

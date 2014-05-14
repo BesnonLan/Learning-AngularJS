@@ -10,7 +10,7 @@ recipes_map = {
     id: 1,
     title: "Cookies",
     description: "Delicious, crisp on the outside, chewy on the outside, oozing with chocolatey goodness cookies. The best kind",
-    ingredients: [ { amount: 1, amount_units: "packet", ingredient_name: "Chips Ahoy" } ],
+    ingredients: [ { amount: 1, amountUnits: "packet", ingredientName: "Chips Ahoy" } ],
     instructions: "1. Go buy a packet of Chips Ahoy\n2. Heat it up in an oven\n3. Enjoy warm cookies\n4. Learn how to bake cookies from somewhere else"
   },
   '2' =>
@@ -19,7 +19,7 @@ recipes_map = {
     title: 'Recipe 2',
     description: 'Description 2',
     instructions: 'Instruction 2',
-    ingredients: [ { amount: 13, amount_units: 'pounds', ingredient_name: 'Awesomeness' } ]
+    ingredients: [ { amount: 13, amountUnits: 'pounds', ingredientName: 'Awesomeness' } ]
   }
 }
 
@@ -33,4 +33,10 @@ get '/recipes' do
   sleep 0.5 #simulate delay on the server
 
   recipes.to_json
+end
+
+get '/recipes/:id' do
+  content_type :json
+
+  recipes_map[params[:id]].to_json
 end
